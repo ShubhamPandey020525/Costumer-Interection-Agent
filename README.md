@@ -29,56 +29,55 @@ When a customer complains, the AI Agent:
 ## 🏗️ System Architecture
 
 ```mermaid
-graph TD
-    %% Styling
-    classDef ui fill:#0d1117,stroke:#30363d,stroke-width:2px,color:#c9d1d9
-    classDef agent fill:#161b22,stroke:#58a6ff,stroke-width:2px,color:#e6edf3
-    classDef llm fill:#21262d,stroke:#a371f7,stroke-width:2px,color:#e6edf3
-    classDef tool fill:#1c2333,stroke:#3fb950,stroke-width:2px,color:#e6edf3
-    classDef db fill:#0d1117,stroke:#d29922,stroke-width:2px,color:#e3b341
+flowchart TB
+    %% Beautiful Styling & Colors
+    classDef user fill:#2EA043,stroke:#ffffff,stroke-width:2px,color:#ffffff,font-weight:bold,rx:10,ry:10
+    classDef ui fill:#1F6FEB,stroke:#ffffff,stroke-width:2px,color:#ffffff,font-weight:bold,rx:5,ry:5
+    classDef agent fill:#8957E5,stroke:#ffffff,stroke-width:2px,color:#ffffff,font-weight:bold
+    classDef tool fill:#D29922,stroke:#ffffff,stroke-width:2px,color:#000000,font-weight:bold,rx:15,ry:15
+    classDef db fill:#F78166,stroke:#ffffff,stroke-width:2px,color:#ffffff,font-weight:bold
+    classDef llm fill:#A371F7,stroke:#ffffff,stroke-width:2px,color:#ffffff,font-weight:bold
+    classDef state fill:#30363D,stroke:#ffffff,stroke-width:2px,color:#ffffff,font-weight:bold
 
-    User([👤 Customer]) -->|Chat Input / Scenarios| UI[💻 Streamlit Frontend]
-    UI:::ui
+    User((👤 Customer)):::user
+    UI[💻 Streamlit App UI]:::ui
+    LLM{{🧠 Google Gemini 2.5 Flash}}:::llm
+    DB[(🗄️ database.json)]:::db
 
-    subgraph LangGraph State Machine [LangGraph Orchestration]
-        Agent[🤖 Agent Node]
-        ToolNode[⚙️ Tool Execution Node]
-        State[(🧠 Graph State)]
+    subgraph LangGraph["⚙️ LangGraph Orchestration Engine"]
+        direction TB
+        Agent{🤖 Agent Node}:::agent
+        State[(🧠 Graph State)]:::state
+        
+        subgraph Tools["🛠️ Tool Execution Node"]
+            direction LR
+            T1([🔍 Lookup]):::tool
+            T2([💵 Compensation]):::tool
+            T3([💸 Refund]):::tool
+            T4([🔄 Rebook]):::tool
+            T5([⚠️ Escalate]):::tool
+        end
     end
-    Agent:::agent
-    ToolNode:::tool
-    State:::db
 
-    UI <-->|Invokes Graph / Reads Updates| Agent
+    User ==>|Input Chat / Select PNR| UI
+    UI ==>|Invoke Graph| LangGraph
     
-    Agent <-->|Read / Write State| State
-    Agent <-->|Sends Prompt / Gets Actions| LLM((🧠 Google Gemini 2.5 Flash))
-    LLM:::llm
-
-    Agent -->|Requests Tool Execution| ToolNode
-    ToolNode -->|Returns Execution Results| Agent
-
-    subgraph Available Agent Tools [LangChain Tools]
-        T1[🔍 lookup_customer_booking]
-        T2[💵 apply_delay_compensation]
-        T3[💸 initiate_refund]
-        T4[🔄 rebook_on_next_flight]
-        T5[⚠️ escalate_to_supervisor]
-    end
+    Agent <==>|Read/Update| State
+    Agent <==>|Reasoning / Decision| LLM
+    Agent ==>|Execute Chosen Tool| Tools
     
-    ToolNode --> T1
-    ToolNode --> T2
-    ToolNode --> T3
-    ToolNode --> T4
-    ToolNode --> T5
-    T1:::tool
-    T2:::tool
-    T3:::tool
-    T4:::tool
-    T5:::tool
+    T1 -.->|Query| DB
+    T2 -.->|Update| DB
+    T3 -.->|Update| DB
+    T4 -.->|Update| DB
+    T5 -.->|Flag| DB
+    
+    Tools ==>|Return Result| Agent
+    LangGraph ==>|Final Response & Log| UI
+    UI ==>|Display| User
 
-    T1 & T2 & T3 & T4 & T5 <-->|Read / Write| DB[(🗄️ database.json)]
-    DB:::db
+    style LangGraph fill:#0D1117,stroke:#8B949E,stroke-width:2px,stroke-dasharray: 5 5,color:#fff
+    style Tools fill:#161B22,stroke:#30363D,stroke-width:1px,color:#fff
 ```
 
 ---
