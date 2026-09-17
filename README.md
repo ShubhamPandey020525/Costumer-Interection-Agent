@@ -26,6 +26,63 @@ When a customer complains, the AI Agent:
 
 ---
 
+## 🏗️ System Architecture
+
+```mermaid
+graph TD
+    %% Styling
+    classDef ui fill:#0d1117,stroke:#30363d,stroke-width:2px,color:#c9d1d9
+    classDef agent fill:#161b22,stroke:#58a6ff,stroke-width:2px,color:#e6edf3
+    classDef llm fill:#21262d,stroke:#a371f7,stroke-width:2px,color:#e6edf3
+    classDef tool fill:#1c2333,stroke:#3fb950,stroke-width:2px,color:#e6edf3
+    classDef db fill:#0d1117,stroke:#d29922,stroke-width:2px,color:#e3b341
+
+    User([👤 Customer]) -->|Chat Input / Scenarios| UI[💻 Streamlit Frontend]
+    UI:::ui
+
+    subgraph LangGraph State Machine [LangGraph Orchestration]
+        Agent[🤖 Agent Node]
+        ToolNode[⚙️ Tool Execution Node]
+        State[(🧠 Graph State)]
+    end
+    Agent:::agent
+    ToolNode:::tool
+    State:::db
+
+    UI <-->|Invokes Graph / Reads Updates| Agent
+    
+    Agent <-->|Read / Write State| State
+    Agent <-->|Sends Prompt / Gets Actions| LLM((🧠 Google Gemini 2.5 Flash))
+    LLM:::llm
+
+    Agent -->|Requests Tool Execution| ToolNode
+    ToolNode -->|Returns Execution Results| Agent
+
+    subgraph Available Agent Tools [LangChain Tools]
+        T1[🔍 lookup_customer_booking]
+        T2[💵 apply_delay_compensation]
+        T3[💸 initiate_refund]
+        T4[🔄 rebook_on_next_flight]
+        T5[⚠️ escalate_to_supervisor]
+    end
+    
+    ToolNode --> T1
+    ToolNode --> T2
+    ToolNode --> T3
+    ToolNode --> T4
+    ToolNode --> T5
+    T1:::tool
+    T2:::tool
+    T3:::tool
+    T4:::tool
+    T5:::tool
+
+    T1 & T2 & T3 & T4 & T5 <-->|Read / Write| DB[(🗄️ database.json)]
+    DB:::db
+```
+
+---
+
 ## 🗄️ Synthetic Database Architecture (`database.json`)
 To mimic a real-world enterprise environment, the application relies on a synthetic database containing 50+ realistic airline customer profiles, loyalty tiers, and booking records.
 
