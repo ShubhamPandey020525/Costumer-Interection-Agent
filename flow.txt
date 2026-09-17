@@ -1,0 +1,72 @@
+Customer Interaction Agent - Flow and Logic
+
+Ye document simple language mein explain karta hai ki humara AI Agent (SkyConnect Airlines ke liye) kaise kaam karta hai aur kisi naye customer ko kaise handle karega.
+
+---
+
+### 1. Overall System Architecture (Kaise kaam kar raha hai?)
+
+Humara agent LangGraph aur Streamlit (UI) pe based hai. Iska architecture 3 main parts mein divided hai:
+
+1.  **Frontend (Streamlit UI - `app.py`)**:
+    *   Ye wo interface hai jo customer ko dikhta hai.
+    *   Yahan chat window hai jisme customer type kar sakta hai.
+    *   Sidebar mein customer ki details (verify hone ke baad) aur agent ka 'Action Log' (agent ne internally kya socha aur kya steps liye) dikhta hai.
+
+2.  **Core Data (Database - `core/data.py`)**:
+    *   Ye humara "Database" hai. Isme saare customers ki details, unke flights ki details aur sabse important "Policies" (rules) hardcoded hain.
+    *   Agent sirf issi data pe rely karta hai. Agar koi naya customer aata hai, to uski details yahan honi chahiye.
+
+3.  **The Agent Logic (LangGraph + LLM - `agent/`)**:
+    *   **LLM (Groq - LLaMA 3.3)**: Ye agent ka dimaag hai jo natural language samajhta hai.
+    *   **State (`state.py`)**: Ye agent ki memory hai. Har message, har action jo agent leta hai, wo state mein save hota hai.
+    *   **Prompt (`prompts.py`)**: Ye agent ka "System Prompt" hai. Isme usko strict instructions diye gaye hain ki use sirf rules (policies) ke hisaab se hi answer karna hai. Use kuch apni taraf se assume nahi karna hai aur kab escalate karna hai ye bataya gaya hai.
+    *   **Tools (`tools.py`)**: Ye sabse important part hai. Agent LLM direct database ya actions nahi le sakta. Usse tools (functions) diye gaye hain. Jaise hi use pata chalta hai ki PNR check karna hai, wo `lookup_customer_booking` tool call karta hai. LLM ko jab pata chalta hai ki compensation dena hai, wo `apply_delay_compensation` tool use karta hai. Har tool khud verify karta hai ki rule satisfy ho raha hai ya nahi aur phir action leta hai (state update karta hai).
+    *   **Graph (`graph.py`)**: Ye LangGraph ka loop hai. Jab customer message karta hai -> Agent LLM sochta hai -> Agar koi tool use karna hai to wo tool node pe jata hai -> Tool run hota hai aur result wapas agent ko deta hai -> Agent finally customer ko reply karta hai.
+
+---
+
+### 2. Naya Customer Aane Pe Flow (Step-by-Step)
+
+Agar ek naya customer chat start karta hai (let's say PNR: `XY9921Z` jiski flight cancel hui hai), to flow kuch is tarah hoga:
+
+**Step 1: Customer ka Message**
+Customer type karta hai: "Meri PNR XY9921Z hai, aur meri flight cancel ho gayi hai. Mujhe dusri flight chahiye."
+
+**Step 2: LLM ka Pehla Decision (Tools ki taraf)**
+*   Message LangGraph ke through agent node pe jata hai.
+*   LLM apna system prompt padhta hai jisme likha hai "Always verify the customer by asking for their booking reference FIRST" aur "Call `lookup_customer_booking` immediately".
+*   LLM detect karta hai ki message mein PNR `XY9921Z` hai.
+*   LLM customer ko reply karne ki bajaye, internally ek tool call generate karta hai: `lookup_customer_booking(booking_ref="XY9921Z")`.
+
+**Step 3: Tool Execution (Verification)**
+*   LangGraph flow tool node pe jata hai aur `lookup_customer_booking` function run hota hai.
+*   Ye function `core/data.py` mein check karta hai.
+    *   *Case A (Valid Customer)*: Agar details mil jaati hain, to tool ek message banata hai: "Name: Rohit, Tier: Silver, Flights: ..., Cancelled flight XYZ". Ye result wapas LangGraph state mein save hota hai aur LLM ke paas jata hai.
+    *   *Case B (Invalid PNR)*: Agar details nahi milti (kisi naye customer ka PNR data.py mein nahi hai), to tool LLM ko batayega "No booking found". LLM customer se kahega "Sorry, mujhe ye PNR nahi mila. Please check karein."
+
+**Step 4: LLM ka Dusra Decision (Action lena)**
+*   Maan lijiye PNR mil gaya (Case A). Ab LLM ke paas tools se aayi hui puri details hain ki flight cancel hui hai.
+*   LLM customer ki demand padhta hai: "Mujhe dusri flight chahiye."
+*   LLM apni policies check karta hai: "Cancellation Rebooking Rule: free rebooking on next available flight".
+*   LLM decide karta hai ki ek aur tool call karna hoga rebook karne ke liye. Wo call karta hai: `rebook_on_next_flight(booking_ref="XY9921Z")`.
+
+**Step 5: Dusra Tool Execution (Rebooking)**
+*   `rebook_on_next_flight` function chalta hai. Ye rules verify karke (ki sachme cancel hui hai ya nahi), customer ko naye flight pe dalne ka message return karta hai aur internal state/log ko update kar deta hai ki "Customer rebooked".
+
+**Step 6: Final Reply to Customer**
+*   Dono tools ke results wapas LLM ke paas aate hain.
+*   LLM ab final natural language response generate karta hai: "Namaste Rohit, maine aapki details verify kar li hain. Aapki flight sachme cancel hui thi aur humari policy ke hisaab se maine aapko agli available flight pe free of cost rebook kar diya hai. Aapki nayi details aapke email pe bhej di gayi hain."
+*   Ye reply Streamlit UI pe dikh jata hai, aur sath hi sath Action Log mein saare steps track ho jate hain ki kis tool ne kya kiya aur kis rule ke tehat kiya.
+
+### 3. Escalation Flow (Agar customer gusse mein ho)
+
+Agar naya customer (PNR: XY9921Z) kehta hai: "Meri flight delay ho gayi 1 ghante aur mujhe compensation mein 5000 Rs chahiye ya main Consumer court jaunga!"
+
+*   LLM details verify karne (Step 2 & 3) ke baad prompt mein rules dekhega.
+*   Rule kehta hai ki <3 hours delay pe sirf 500 Rs voucher mil sakta hai.
+*   LLM prompt padhega: "Mandatory Escalation Triggers: Customer threatens legal action... or demands compensation beyond policy".
+*   LLM is baar direct customer se bahas karne ki bajaye `escalate_to_supervisor(reason="Demanding 5000 Rs and threatening consumer court")` tool call karega.
+*   UI pe ek Escalation Banner aa jayega aur customer ko message jayega ki "I understand your frustration, I am escalating this to our specialist team."
+
+**In short**: Har naye customer ke liye Agent pehle **Identity Verify** karta hai (Tool 1) -> **Issue Samajhta hai** -> **Policy Rules apply** karta hai -> **Appropriate Action Tool** (Tool 2, 3, etc.) call karke resolve karta hai ya Escalation tool call karke insaan ko transfer kar deta hai.

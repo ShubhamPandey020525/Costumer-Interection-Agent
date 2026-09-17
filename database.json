@@ -1,0 +1,1277 @@
+{
+    "customers": {
+        "SK4821X": {
+            "pnr": "SK4821X",
+            "name": "Priya Nair",
+            "loyalty_tier": "Gold",
+            "email": "priya.nair@example.com",
+            "phone": "+91-98xxxxxxx1",
+            "travel_history": {
+                "flights_last_12_months": 6,
+                "prior_complaints": [
+                    {
+                        "issue": "delayed baggage",
+                        "resolution": "resolved with voucher"
+                    }
+                ]
+            },
+            "escalated": true,
+            "compensation_applied": [],
+            "bookings": [
+                {
+                    "flight_id": "SK-204",
+                    "route": "Delhi \u2192 Goa",
+                    "date": "Wed 23 Sep 2026",
+                    "scheduled_departure": "18:40",
+                    "status": "Cancelled",
+                    "status_reason": "operational reasons",
+                    "delay_hours": null,
+                    "new_departure": null
+                },
+                {
+                    "flight_id": "Return",
+                    "route": "Goa \u2192 Delhi",
+                    "date": "Fri 25 Sep 2026",
+                    "scheduled_departure": "16:20",
+                    "status": "Unaffected",
+                    "status_reason": null,
+                    "delay_hours": null,
+                    "new_departure": null
+                }
+            ]
+        },
+        "TR1190B": {
+            "pnr": "TR1190B",
+            "name": "Arvind Kulkarni",
+            "loyalty_tier": "Silver",
+            "email": "arvind.kulkarni@example.com",
+            "phone": "+91-98xxxxxxx2",
+            "travel_history": {
+                "flights_last_12_months": 3,
+                "prior_complaints": []
+            },
+            "escalated": false,
+            "compensation_applied": [
+                "Meal voucher",
+                "Lounge access"
+            ],
+            "bookings": [
+                {
+                    "flight_id": "SK-118",
+                    "route": "Mumbai \u2192 Bengaluru",
+                    "date": "Wed 23 Sep 2026",
+                    "scheduled_departure": "07:10",
+                    "status": "Delayed",
+                    "status_reason": null,
+                    "delay_hours": 4,
+                    "new_departure": "11:10"
+                }
+            ]
+        },
+        "WL7742": {
+            "pnr": "WL7742",
+            "name": "Meher Kaur",
+            "loyalty_tier": "Platinum",
+            "email": "meher.kaur@example.com",
+            "phone": "+91-98xxxxxxx3",
+            "travel_history": {
+                "flights_last_12_months": 10,
+                "prior_complaints": [
+                    {
+                        "issue": "overbooking",
+                        "resolution": "resolved with a tier-status upgrade"
+                    }
+                ]
+            },
+            "escalated": true,
+            "compensation_applied": [],
+            "bookings": [
+                {
+                    "flight_id": "SK-305",
+                    "route": "Delhi \u2192 Hyderabad",
+                    "date": "Wed 23 Sep 2026",
+                    "scheduled_departure": "14:00",
+                    "status": "Delayed",
+                    "status_reason": null,
+                    "delay_hours": 6,
+                    "new_departure": "20:00"
+                }
+            ]
+        },
+        "AG0TRD": {
+            "pnr": "AG0TRD",
+            "name": "Kavita Desai",
+            "loyalty_tier": "Standard",
+            "email": "kavita.desai@example.com",
+            "phone": "+91-987428206",
+            "travel_history": {
+                "flights_last_12_months": 4,
+                "prior_complaints": []
+            },
+            "escalated": false,
+            "compensation_applied": [],
+            "bookings": [
+                {
+                    "flight_id": "SK-303",
+                    "route": "Bengaluru \u2192 Hyderabad",
+                    "date": "Wed 23 Sep 2026",
+                    "scheduled_departure": "13:30",
+                    "status": "Unaffected",
+                    "status_reason": null,
+                    "delay_hours": null,
+                    "new_departure": null
+                }
+            ]
+        },
+        "XLNLVY": {
+            "pnr": "XLNLVY",
+            "name": "Pooja Gupta",
+            "loyalty_tier": "Standard",
+            "email": "pooja.gupta@example.com",
+            "phone": "+91-982564889",
+            "travel_history": {
+                "flights_last_12_months": 6,
+                "prior_complaints": []
+            },
+            "escalated": false,
+            "compensation_applied": [],
+            "bookings": [
+                {
+                    "flight_id": "SK-505",
+                    "route": "Kolkata \u2192 Delhi",
+                    "date": "Wed 23 Sep 2026",
+                    "scheduled_departure": "22:30",
+                    "status": "Cancelled",
+                    "status_reason": "weather conditions",
+                    "delay_hours": null,
+                    "new_departure": null
+                }
+            ]
+        },
+        "RK2HH9": {
+            "pnr": "RK2HH9",
+            "name": "Pooja Kumar",
+            "loyalty_tier": "Standard",
+            "email": "pooja.kumar@example.com",
+            "phone": "+91-981482663",
+            "travel_history": {
+                "flights_last_12_months": 1,
+                "prior_complaints": []
+            },
+            "escalated": false,
+            "compensation_applied": [],
+            "bookings": [
+                {
+                    "flight_id": "SK-101",
+                    "route": "Delhi \u2192 Mumbai",
+                    "date": "Wed 23 Sep 2026",
+                    "scheduled_departure": "04:00",
+                    "status": "Unaffected",
+                    "status_reason": null,
+                    "delay_hours": null,
+                    "new_departure": null
+                }
+            ]
+        },
+        "9AXIJJ": {
+            "pnr": "9AXIJJ",
+            "name": "Pooja Bose",
+            "loyalty_tier": "Standard",
+            "email": "pooja.bose@example.com",
+            "phone": "+91-986961072",
+            "travel_history": {
+                "flights_last_12_months": 8,
+                "prior_complaints": []
+            },
+            "escalated": false,
+            "compensation_applied": [],
+            "bookings": [
+                {
+                    "flight_id": "SK-505",
+                    "route": "Bengaluru \u2192 Hyderabad",
+                    "date": "Wed 23 Sep 2026",
+                    "scheduled_departure": "17:30",
+                    "status": "Delayed",
+                    "status_reason": null,
+                    "delay_hours": 1,
+                    "new_departure": "18:30"
+                }
+            ]
+        },
+        "VQT11A": {
+            "pnr": "VQT11A",
+            "name": "Rahul Singh",
+            "loyalty_tier": "Standard",
+            "email": "rahul.singh@example.com",
+            "phone": "+91-988772670",
+            "travel_history": {
+                "flights_last_12_months": 10,
+                "prior_complaints": []
+            },
+            "escalated": false,
+            "compensation_applied": [],
+            "bookings": [
+                {
+                    "flight_id": "SK-101",
+                    "route": "Hyderabad \u2192 Goa",
+                    "date": "Wed 23 Sep 2026",
+                    "scheduled_departure": "11:15",
+                    "status": "Delayed",
+                    "status_reason": null,
+                    "delay_hours": 2,
+                    "new_departure": "13:15"
+                }
+            ]
+        },
+        "Z0T50S": {
+            "pnr": "Z0T50S",
+            "name": "Simran Gupta",
+            "loyalty_tier": "Silver",
+            "email": "simran.gupta@example.com",
+            "phone": "+91-986053906",
+            "travel_history": {
+                "flights_last_12_months": 8,
+                "prior_complaints": []
+            },
+            "escalated": false,
+            "compensation_applied": [],
+            "bookings": [
+                {
+                    "flight_id": "SK-101",
+                    "route": "Bengaluru \u2192 Hyderabad",
+                    "date": "Wed 23 Sep 2026",
+                    "scheduled_departure": "20:30",
+                    "status": "Delayed",
+                    "status_reason": null,
+                    "delay_hours": 4,
+                    "new_departure": "00:30"
+                }
+            ]
+        },
+        "1P3FU8": {
+            "pnr": "1P3FU8",
+            "name": "Raj Sharma",
+            "loyalty_tier": "Standard",
+            "email": "raj.sharma@example.com",
+            "phone": "+91-986139621",
+            "travel_history": {
+                "flights_last_12_months": 14,
+                "prior_complaints": []
+            },
+            "escalated": false,
+            "compensation_applied": [],
+            "bookings": [
+                {
+                    "flight_id": "SK-606",
+                    "route": "Delhi \u2192 Mumbai",
+                    "date": "Wed 23 Sep 2026",
+                    "scheduled_departure": "13:30",
+                    "status": "Delayed",
+                    "status_reason": null,
+                    "delay_hours": 6,
+                    "new_departure": "19:30"
+                }
+            ]
+        },
+        "9FGU13": {
+            "pnr": "9FGU13",
+            "name": "Kavita Sharma",
+            "loyalty_tier": "Standard",
+            "email": "kavita.sharma@example.com",
+            "phone": "+91-989735796",
+            "travel_history": {
+                "flights_last_12_months": 8,
+                "prior_complaints": []
+            },
+            "escalated": false,
+            "compensation_applied": [],
+            "bookings": [
+                {
+                    "flight_id": "SK-505",
+                    "route": "Chennai \u2192 Pune",
+                    "date": "Wed 23 Sep 2026",
+                    "scheduled_departure": "23:15",
+                    "status": "Cancelled",
+                    "status_reason": "weather conditions",
+                    "delay_hours": null,
+                    "new_departure": null
+                }
+            ]
+        },
+        "DRYX36": {
+            "pnr": "DRYX36",
+            "name": "Simran Bose",
+            "loyalty_tier": "Standard",
+            "email": "simran.bose@example.com",
+            "phone": "+91-982214559",
+            "travel_history": {
+                "flights_last_12_months": 13,
+                "prior_complaints": []
+            },
+            "escalated": false,
+            "compensation_applied": [],
+            "bookings": [
+                {
+                    "flight_id": "SK-404",
+                    "route": "Mumbai \u2192 Delhi",
+                    "date": "Wed 23 Sep 2026",
+                    "scheduled_departure": "08:00",
+                    "status": "Unaffected",
+                    "status_reason": null,
+                    "delay_hours": null,
+                    "new_departure": null
+                }
+            ]
+        },
+        "ZZWQ7U": {
+            "pnr": "ZZWQ7U",
+            "name": "Amit Patel",
+            "loyalty_tier": "Platinum",
+            "email": "amit.patel@example.com",
+            "phone": "+91-983537292",
+            "travel_history": {
+                "flights_last_12_months": 4,
+                "prior_complaints": []
+            },
+            "escalated": false,
+            "compensation_applied": [],
+            "bookings": [
+                {
+                    "flight_id": "SK-303",
+                    "route": "Bengaluru \u2192 Hyderabad",
+                    "date": "Wed 23 Sep 2026",
+                    "scheduled_departure": "23:30",
+                    "status": "Cancelled",
+                    "status_reason": "operational reasons",
+                    "delay_hours": null,
+                    "new_departure": null
+                }
+            ]
+        },
+        "NUA1M6": {
+            "pnr": "NUA1M6",
+            "name": "Vikram Sharma",
+            "loyalty_tier": "Silver",
+            "email": "vikram.sharma@example.com",
+            "phone": "+91-983306643",
+            "travel_history": {
+                "flights_last_12_months": 15,
+                "prior_complaints": []
+            },
+            "escalated": false,
+            "compensation_applied": [],
+            "bookings": [
+                {
+                    "flight_id": "SK-606",
+                    "route": "Chennai \u2192 Pune",
+                    "date": "Wed 23 Sep 2026",
+                    "scheduled_departure": "05:00",
+                    "status": "Unaffected",
+                    "status_reason": null,
+                    "delay_hours": null,
+                    "new_departure": null
+                }
+            ]
+        },
+        "49NCDP": {
+            "pnr": "49NCDP",
+            "name": "Sneha Patel",
+            "loyalty_tier": "Silver",
+            "email": "sneha.patel@example.com",
+            "phone": "+91-987692449",
+            "travel_history": {
+                "flights_last_12_months": 0,
+                "prior_complaints": []
+            },
+            "escalated": false,
+            "compensation_applied": [],
+            "bookings": [
+                {
+                    "flight_id": "SK-505",
+                    "route": "Bengaluru \u2192 Hyderabad",
+                    "date": "Wed 23 Sep 2026",
+                    "scheduled_departure": "23:30",
+                    "status": "Delayed",
+                    "status_reason": null,
+                    "delay_hours": 4,
+                    "new_departure": "03:30"
+                }
+            ]
+        },
+        "3XHCVR": {
+            "pnr": "3XHCVR",
+            "name": "Simran Gupta",
+            "loyalty_tier": "Silver",
+            "email": "simran.gupta@example.com",
+            "phone": "+91-987685497",
+            "travel_history": {
+                "flights_last_12_months": 10,
+                "prior_complaints": []
+            },
+            "escalated": false,
+            "compensation_applied": [],
+            "bookings": [
+                {
+                    "flight_id": "SK-404",
+                    "route": "Chennai \u2192 Pune",
+                    "date": "Wed 23 Sep 2026",
+                    "scheduled_departure": "12:30",
+                    "status": "Delayed",
+                    "status_reason": null,
+                    "delay_hours": 3,
+                    "new_departure": "15:30"
+                }
+            ]
+        },
+        "BHDM5B": {
+            "pnr": "BHDM5B",
+            "name": "Rohan Gupta",
+            "loyalty_tier": "Standard",
+            "email": "rohan.gupta@example.com",
+            "phone": "+91-984802840",
+            "travel_history": {
+                "flights_last_12_months": 3,
+                "prior_complaints": []
+            },
+            "escalated": false,
+            "compensation_applied": [],
+            "bookings": [
+                {
+                    "flight_id": "SK-505",
+                    "route": "Delhi \u2192 Mumbai",
+                    "date": "Wed 23 Sep 2026",
+                    "scheduled_departure": "16:15",
+                    "status": "Unaffected",
+                    "status_reason": null,
+                    "delay_hours": null,
+                    "new_departure": null
+                }
+            ]
+        },
+        "SQIY9M": {
+            "pnr": "SQIY9M",
+            "name": "Neha Bose",
+            "loyalty_tier": "Standard",
+            "email": "neha.bose@example.com",
+            "phone": "+91-984454797",
+            "travel_history": {
+                "flights_last_12_months": 9,
+                "prior_complaints": []
+            },
+            "escalated": false,
+            "compensation_applied": [],
+            "bookings": [
+                {
+                    "flight_id": "SK-101",
+                    "route": "Hyderabad \u2192 Goa",
+                    "date": "Wed 23 Sep 2026",
+                    "scheduled_departure": "15:45",
+                    "status": "Cancelled",
+                    "status_reason": "weather conditions",
+                    "delay_hours": null,
+                    "new_departure": null
+                }
+            ]
+        },
+        "MBEVV6": {
+            "pnr": "MBEVV6",
+            "name": "Simran Singh",
+            "loyalty_tier": "Silver",
+            "email": "simran.singh@example.com",
+            "phone": "+91-986842101",
+            "travel_history": {
+                "flights_last_12_months": 0,
+                "prior_complaints": []
+            },
+            "escalated": false,
+            "compensation_applied": [],
+            "bookings": [
+                {
+                    "flight_id": "SK-404",
+                    "route": "Chennai \u2192 Pune",
+                    "date": "Wed 23 Sep 2026",
+                    "scheduled_departure": "03:00",
+                    "status": "Unaffected",
+                    "status_reason": null,
+                    "delay_hours": null,
+                    "new_departure": null
+                }
+            ]
+        },
+        "REFSPW": {
+            "pnr": "REFSPW",
+            "name": "Kavita Patel",
+            "loyalty_tier": "Standard",
+            "email": "kavita.patel@example.com",
+            "phone": "+91-983467765",
+            "travel_history": {
+                "flights_last_12_months": 11,
+                "prior_complaints": []
+            },
+            "escalated": false,
+            "compensation_applied": [],
+            "bookings": [
+                {
+                    "flight_id": "SK-202",
+                    "route": "Delhi \u2192 Mumbai",
+                    "date": "Wed 23 Sep 2026",
+                    "scheduled_departure": "15:00",
+                    "status": "Unaffected",
+                    "status_reason": null,
+                    "delay_hours": null,
+                    "new_departure": null
+                }
+            ]
+        },
+        "ZGVCWU": {
+            "pnr": "ZGVCWU",
+            "name": "Rohan Sharma",
+            "loyalty_tier": "Standard",
+            "email": "rohan.sharma@example.com",
+            "phone": "+91-986310052",
+            "travel_history": {
+                "flights_last_12_months": 15,
+                "prior_complaints": []
+            },
+            "escalated": false,
+            "compensation_applied": [],
+            "bookings": [
+                {
+                    "flight_id": "SK-404",
+                    "route": "Chennai \u2192 Pune",
+                    "date": "Wed 23 Sep 2026",
+                    "scheduled_departure": "02:30",
+                    "status": "Delayed",
+                    "status_reason": null,
+                    "delay_hours": 4,
+                    "new_departure": "06:30"
+                }
+            ]
+        },
+        "O3IN1B": {
+            "pnr": "O3IN1B",
+            "name": "Vikram Bose",
+            "loyalty_tier": "Platinum",
+            "email": "vikram.bose@example.com",
+            "phone": "+91-988633074",
+            "travel_history": {
+                "flights_last_12_months": 4,
+                "prior_complaints": []
+            },
+            "escalated": false,
+            "compensation_applied": [],
+            "bookings": [
+                {
+                    "flight_id": "SK-303",
+                    "route": "Chennai \u2192 Pune",
+                    "date": "Wed 23 Sep 2026",
+                    "scheduled_departure": "01:00",
+                    "status": "Cancelled",
+                    "status_reason": "operational reasons",
+                    "delay_hours": null,
+                    "new_departure": null
+                }
+            ]
+        },
+        "IEGNHG": {
+            "pnr": "IEGNHG",
+            "name": "Kavita Desai",
+            "loyalty_tier": "Silver",
+            "email": "kavita.desai@example.com",
+            "phone": "+91-985210105",
+            "travel_history": {
+                "flights_last_12_months": 3,
+                "prior_complaints": []
+            },
+            "escalated": false,
+            "compensation_applied": [],
+            "bookings": [
+                {
+                    "flight_id": "SK-303",
+                    "route": "Bengaluru \u2192 Hyderabad",
+                    "date": "Wed 23 Sep 2026",
+                    "scheduled_departure": "04:30",
+                    "status": "Delayed",
+                    "status_reason": null,
+                    "delay_hours": 2,
+                    "new_departure": "06:30"
+                }
+            ]
+        },
+        "9H066D": {
+            "pnr": "9H066D",
+            "name": "Anjali Bose",
+            "loyalty_tier": "Standard",
+            "email": "anjali.bose@example.com",
+            "phone": "+91-989611789",
+            "travel_history": {
+                "flights_last_12_months": 14,
+                "prior_complaints": []
+            },
+            "escalated": false,
+            "compensation_applied": [],
+            "bookings": [
+                {
+                    "flight_id": "SK-404",
+                    "route": "Hyderabad \u2192 Goa",
+                    "date": "Wed 23 Sep 2026",
+                    "scheduled_departure": "16:15",
+                    "status": "Unaffected",
+                    "status_reason": null,
+                    "delay_hours": null,
+                    "new_departure": null
+                }
+            ]
+        },
+        "DZ1Z45": {
+            "pnr": "DZ1Z45",
+            "name": "Rahul Patel",
+            "loyalty_tier": "Standard",
+            "email": "rahul.patel@example.com",
+            "phone": "+91-988844870",
+            "travel_history": {
+                "flights_last_12_months": 14,
+                "prior_complaints": []
+            },
+            "escalated": false,
+            "compensation_applied": [],
+            "bookings": [
+                {
+                    "flight_id": "SK-101",
+                    "route": "Hyderabad \u2192 Goa",
+                    "date": "Wed 23 Sep 2026",
+                    "scheduled_departure": "13:30",
+                    "status": "Unaffected",
+                    "status_reason": null,
+                    "delay_hours": null,
+                    "new_departure": null
+                }
+            ]
+        },
+        "GIVCQU": {
+            "pnr": "GIVCQU",
+            "name": "Anjali Kumar",
+            "loyalty_tier": "Standard",
+            "email": "anjali.kumar@example.com",
+            "phone": "+91-982226139",
+            "travel_history": {
+                "flights_last_12_months": 2,
+                "prior_complaints": []
+            },
+            "escalated": false,
+            "compensation_applied": [],
+            "bookings": [
+                {
+                    "flight_id": "SK-101",
+                    "route": "Hyderabad \u2192 Goa",
+                    "date": "Wed 23 Sep 2026",
+                    "scheduled_departure": "19:15",
+                    "status": "Unaffected",
+                    "status_reason": null,
+                    "delay_hours": null,
+                    "new_departure": null
+                }
+            ]
+        },
+        "BR62Y0": {
+            "pnr": "BR62Y0",
+            "name": "Anjali Gupta",
+            "loyalty_tier": "Standard",
+            "email": "anjali.gupta@example.com",
+            "phone": "+91-987060883",
+            "travel_history": {
+                "flights_last_12_months": 4,
+                "prior_complaints": []
+            },
+            "escalated": false,
+            "compensation_applied": [],
+            "bookings": [
+                {
+                    "flight_id": "SK-505",
+                    "route": "Kolkata \u2192 Delhi",
+                    "date": "Wed 23 Sep 2026",
+                    "scheduled_departure": "18:45",
+                    "status": "Unaffected",
+                    "status_reason": null,
+                    "delay_hours": null,
+                    "new_departure": null
+                }
+            ]
+        },
+        "GDEFEN": {
+            "pnr": "GDEFEN",
+            "name": "Kavita Reddy",
+            "loyalty_tier": "Standard",
+            "email": "kavita.reddy@example.com",
+            "phone": "+91-983061604",
+            "travel_history": {
+                "flights_last_12_months": 0,
+                "prior_complaints": []
+            },
+            "escalated": false,
+            "compensation_applied": [],
+            "bookings": [
+                {
+                    "flight_id": "SK-202",
+                    "route": "Delhi \u2192 Mumbai",
+                    "date": "Wed 23 Sep 2026",
+                    "scheduled_departure": "22:30",
+                    "status": "Unaffected",
+                    "status_reason": null,
+                    "delay_hours": null,
+                    "new_departure": null
+                }
+            ]
+        },
+        "7KBAZI": {
+            "pnr": "7KBAZI",
+            "name": "Amit Kumar",
+            "loyalty_tier": "Gold",
+            "email": "amit.kumar@example.com",
+            "phone": "+91-981515961",
+            "travel_history": {
+                "flights_last_12_months": 2,
+                "prior_complaints": []
+            },
+            "escalated": false,
+            "compensation_applied": [],
+            "bookings": [
+                {
+                    "flight_id": "SK-303",
+                    "route": "Bengaluru \u2192 Hyderabad",
+                    "date": "Wed 23 Sep 2026",
+                    "scheduled_departure": "21:00",
+                    "status": "Delayed",
+                    "status_reason": null,
+                    "delay_hours": 2,
+                    "new_departure": "23:00"
+                }
+            ]
+        },
+        "LRR2BH": {
+            "pnr": "LRR2BH",
+            "name": "Suresh Kumar",
+            "loyalty_tier": "Silver",
+            "email": "suresh.kumar@example.com",
+            "phone": "+91-981048788",
+            "travel_history": {
+                "flights_last_12_months": 9,
+                "prior_complaints": []
+            },
+            "escalated": false,
+            "compensation_applied": [],
+            "bookings": [
+                {
+                    "flight_id": "SK-101",
+                    "route": "Mumbai \u2192 Delhi",
+                    "date": "Wed 23 Sep 2026",
+                    "scheduled_departure": "22:45",
+                    "status": "Unaffected",
+                    "status_reason": null,
+                    "delay_hours": null,
+                    "new_departure": null
+                }
+            ]
+        },
+        "4VPZVD": {
+            "pnr": "4VPZVD",
+            "name": "Anjali Reddy",
+            "loyalty_tier": "Silver",
+            "email": "anjali.reddy@example.com",
+            "phone": "+91-985866461",
+            "travel_history": {
+                "flights_last_12_months": 2,
+                "prior_complaints": []
+            },
+            "escalated": false,
+            "compensation_applied": [],
+            "bookings": [
+                {
+                    "flight_id": "SK-505",
+                    "route": "Chennai \u2192 Pune",
+                    "date": "Wed 23 Sep 2026",
+                    "scheduled_departure": "07:45",
+                    "status": "Delayed",
+                    "status_reason": null,
+                    "delay_hours": 3,
+                    "new_departure": "10:45"
+                }
+            ]
+        },
+        "VQ9W0X": {
+            "pnr": "VQ9W0X",
+            "name": "Rahul Singh",
+            "loyalty_tier": "Gold",
+            "email": "rahul.singh@example.com",
+            "phone": "+91-984238354",
+            "travel_history": {
+                "flights_last_12_months": 11,
+                "prior_complaints": []
+            },
+            "escalated": false,
+            "compensation_applied": [],
+            "bookings": [
+                {
+                    "flight_id": "SK-303",
+                    "route": "Hyderabad \u2192 Goa",
+                    "date": "Wed 23 Sep 2026",
+                    "scheduled_departure": "19:30",
+                    "status": "Delayed",
+                    "status_reason": null,
+                    "delay_hours": 6,
+                    "new_departure": "01:30"
+                }
+            ]
+        },
+        "25RHZP": {
+            "pnr": "25RHZP",
+            "name": "Vikram Jain",
+            "loyalty_tier": "Standard",
+            "email": "vikram.jain@example.com",
+            "phone": "+91-987651748",
+            "travel_history": {
+                "flights_last_12_months": 12,
+                "prior_complaints": []
+            },
+            "escalated": false,
+            "compensation_applied": [],
+            "bookings": [
+                {
+                    "flight_id": "SK-101",
+                    "route": "Delhi \u2192 Mumbai",
+                    "date": "Wed 23 Sep 2026",
+                    "scheduled_departure": "23:00",
+                    "status": "Cancelled",
+                    "status_reason": "weather conditions",
+                    "delay_hours": null,
+                    "new_departure": null
+                }
+            ]
+        },
+        "9Z9ON4": {
+            "pnr": "9Z9ON4",
+            "name": "Suresh Jain",
+            "loyalty_tier": "Standard",
+            "email": "suresh.jain@example.com",
+            "phone": "+91-985566224",
+            "travel_history": {
+                "flights_last_12_months": 12,
+                "prior_complaints": []
+            },
+            "escalated": false,
+            "compensation_applied": [],
+            "bookings": [
+                {
+                    "flight_id": "SK-202",
+                    "route": "Hyderabad \u2192 Goa",
+                    "date": "Wed 23 Sep 2026",
+                    "scheduled_departure": "11:45",
+                    "status": "Unaffected",
+                    "status_reason": null,
+                    "delay_hours": null,
+                    "new_departure": null
+                }
+            ]
+        },
+        "0FTTN1": {
+            "pnr": "0FTTN1",
+            "name": "Raj Singh",
+            "loyalty_tier": "Standard",
+            "email": "raj.singh@example.com",
+            "phone": "+91-986700366",
+            "travel_history": {
+                "flights_last_12_months": 11,
+                "prior_complaints": []
+            },
+            "escalated": false,
+            "compensation_applied": [],
+            "bookings": [
+                {
+                    "flight_id": "SK-101",
+                    "route": "Chennai \u2192 Pune",
+                    "date": "Wed 23 Sep 2026",
+                    "scheduled_departure": "23:30",
+                    "status": "Unaffected",
+                    "status_reason": null,
+                    "delay_hours": null,
+                    "new_departure": null
+                }
+            ]
+        },
+        "CCT3N4": {
+            "pnr": "CCT3N4",
+            "name": "Kavita Gupta",
+            "loyalty_tier": "Silver",
+            "email": "kavita.gupta@example.com",
+            "phone": "+91-989958818",
+            "travel_history": {
+                "flights_last_12_months": 11,
+                "prior_complaints": []
+            },
+            "escalated": false,
+            "compensation_applied": [],
+            "bookings": [
+                {
+                    "flight_id": "SK-303",
+                    "route": "Chennai \u2192 Pune",
+                    "date": "Wed 23 Sep 2026",
+                    "scheduled_departure": "21:15",
+                    "status": "Delayed",
+                    "status_reason": null,
+                    "delay_hours": 3,
+                    "new_departure": "00:15"
+                }
+            ]
+        },
+        "FX6QFU": {
+            "pnr": "FX6QFU",
+            "name": "Pooja Singh",
+            "loyalty_tier": "Standard",
+            "email": "pooja.singh@example.com",
+            "phone": "+91-981222548",
+            "travel_history": {
+                "flights_last_12_months": 5,
+                "prior_complaints": []
+            },
+            "escalated": false,
+            "compensation_applied": [],
+            "bookings": [
+                {
+                    "flight_id": "SK-303",
+                    "route": "Mumbai \u2192 Delhi",
+                    "date": "Wed 23 Sep 2026",
+                    "scheduled_departure": "19:00",
+                    "status": "Unaffected",
+                    "status_reason": null,
+                    "delay_hours": null,
+                    "new_departure": null
+                }
+            ]
+        },
+        "3V0ZXZ": {
+            "pnr": "3V0ZXZ",
+            "name": "Vikram Desai",
+            "loyalty_tier": "Platinum",
+            "email": "vikram.desai@example.com",
+            "phone": "+91-982779646",
+            "travel_history": {
+                "flights_last_12_months": 3,
+                "prior_complaints": []
+            },
+            "escalated": false,
+            "compensation_applied": [],
+            "bookings": [
+                {
+                    "flight_id": "SK-404",
+                    "route": "Chennai \u2192 Pune",
+                    "date": "Wed 23 Sep 2026",
+                    "scheduled_departure": "00:45",
+                    "status": "Unaffected",
+                    "status_reason": null,
+                    "delay_hours": null,
+                    "new_departure": null
+                }
+            ]
+        },
+        "GVZ60G": {
+            "pnr": "GVZ60G",
+            "name": "Sneha Gupta",
+            "loyalty_tier": "Standard",
+            "email": "sneha.gupta@example.com",
+            "phone": "+91-988784834",
+            "travel_history": {
+                "flights_last_12_months": 4,
+                "prior_complaints": []
+            },
+            "escalated": false,
+            "compensation_applied": [],
+            "bookings": [
+                {
+                    "flight_id": "SK-303",
+                    "route": "Bengaluru \u2192 Hyderabad",
+                    "date": "Wed 23 Sep 2026",
+                    "scheduled_departure": "08:30",
+                    "status": "Unaffected",
+                    "status_reason": null,
+                    "delay_hours": null,
+                    "new_departure": null
+                }
+            ]
+        },
+        "JB3EHH": {
+            "pnr": "JB3EHH",
+            "name": "Amit Bose",
+            "loyalty_tier": "Standard",
+            "email": "amit.bose@example.com",
+            "phone": "+91-988027452",
+            "travel_history": {
+                "flights_last_12_months": 1,
+                "prior_complaints": []
+            },
+            "escalated": false,
+            "compensation_applied": [],
+            "bookings": [
+                {
+                    "flight_id": "SK-202",
+                    "route": "Delhi \u2192 Mumbai",
+                    "date": "Wed 23 Sep 2026",
+                    "scheduled_departure": "03:00",
+                    "status": "Delayed",
+                    "status_reason": null,
+                    "delay_hours": 5,
+                    "new_departure": "08:00"
+                }
+            ]
+        },
+        "RURU0F": {
+            "pnr": "RURU0F",
+            "name": "Raj Jain",
+            "loyalty_tier": "Standard",
+            "email": "raj.jain@example.com",
+            "phone": "+91-982479680",
+            "travel_history": {
+                "flights_last_12_months": 0,
+                "prior_complaints": []
+            },
+            "escalated": false,
+            "compensation_applied": [],
+            "bookings": [
+                {
+                    "flight_id": "SK-303",
+                    "route": "Delhi \u2192 Mumbai",
+                    "date": "Wed 23 Sep 2026",
+                    "scheduled_departure": "22:45",
+                    "status": "Unaffected",
+                    "status_reason": null,
+                    "delay_hours": null,
+                    "new_departure": null
+                }
+            ]
+        },
+        "KCSP3Q": {
+            "pnr": "KCSP3Q",
+            "name": "Rahul Jain",
+            "loyalty_tier": "Silver",
+            "email": "rahul.jain@example.com",
+            "phone": "+91-987700682",
+            "travel_history": {
+                "flights_last_12_months": 13,
+                "prior_complaints": []
+            },
+            "escalated": false,
+            "compensation_applied": [],
+            "bookings": [
+                {
+                    "flight_id": "SK-606",
+                    "route": "Chennai \u2192 Pune",
+                    "date": "Wed 23 Sep 2026",
+                    "scheduled_departure": "20:15",
+                    "status": "Cancelled",
+                    "status_reason": "technical fault",
+                    "delay_hours": null,
+                    "new_departure": null
+                }
+            ]
+        },
+        "DH803C": {
+            "pnr": "DH803C",
+            "name": "Pooja Desai",
+            "loyalty_tier": "Silver",
+            "email": "pooja.desai@example.com",
+            "phone": "+91-981653428",
+            "travel_history": {
+                "flights_last_12_months": 15,
+                "prior_complaints": []
+            },
+            "escalated": false,
+            "compensation_applied": [],
+            "bookings": [
+                {
+                    "flight_id": "SK-505",
+                    "route": "Chennai \u2192 Pune",
+                    "date": "Wed 23 Sep 2026",
+                    "scheduled_departure": "20:15",
+                    "status": "Delayed",
+                    "status_reason": null,
+                    "delay_hours": 2,
+                    "new_departure": "22:15"
+                }
+            ]
+        },
+        "QIDC08": {
+            "pnr": "QIDC08",
+            "name": "Raj Gupta",
+            "loyalty_tier": "Gold",
+            "email": "raj.gupta@example.com",
+            "phone": "+91-983565723",
+            "travel_history": {
+                "flights_last_12_months": 14,
+                "prior_complaints": []
+            },
+            "escalated": false,
+            "compensation_applied": [],
+            "bookings": [
+                {
+                    "flight_id": "SK-303",
+                    "route": "Mumbai \u2192 Delhi",
+                    "date": "Wed 23 Sep 2026",
+                    "scheduled_departure": "04:00",
+                    "status": "Unaffected",
+                    "status_reason": null,
+                    "delay_hours": null,
+                    "new_departure": null
+                }
+            ]
+        },
+        "D36FUC": {
+            "pnr": "D36FUC",
+            "name": "Amit Gupta",
+            "loyalty_tier": "Standard",
+            "email": "amit.gupta@example.com",
+            "phone": "+91-983931258",
+            "travel_history": {
+                "flights_last_12_months": 12,
+                "prior_complaints": []
+            },
+            "escalated": false,
+            "compensation_applied": [],
+            "bookings": [
+                {
+                    "flight_id": "SK-303",
+                    "route": "Kolkata \u2192 Delhi",
+                    "date": "Wed 23 Sep 2026",
+                    "scheduled_departure": "23:45",
+                    "status": "Unaffected",
+                    "status_reason": null,
+                    "delay_hours": null,
+                    "new_departure": null
+                }
+            ]
+        },
+        "2AEWDX": {
+            "pnr": "2AEWDX",
+            "name": "Suresh Gupta",
+            "loyalty_tier": "Standard",
+            "email": "suresh.gupta@example.com",
+            "phone": "+91-983424630",
+            "travel_history": {
+                "flights_last_12_months": 10,
+                "prior_complaints": []
+            },
+            "escalated": false,
+            "compensation_applied": [],
+            "bookings": [
+                {
+                    "flight_id": "SK-505",
+                    "route": "Delhi \u2192 Mumbai",
+                    "date": "Wed 23 Sep 2026",
+                    "scheduled_departure": "03:30",
+                    "status": "Cancelled",
+                    "status_reason": "weather conditions",
+                    "delay_hours": null,
+                    "new_departure": null
+                }
+            ]
+        },
+        "XT3I6K": {
+            "pnr": "XT3I6K",
+            "name": "Rahul Singh",
+            "loyalty_tier": "Gold",
+            "email": "rahul.singh@example.com",
+            "phone": "+91-989747336",
+            "travel_history": {
+                "flights_last_12_months": 4,
+                "prior_complaints": []
+            },
+            "escalated": false,
+            "compensation_applied": [],
+            "bookings": [
+                {
+                    "flight_id": "SK-101",
+                    "route": "Delhi \u2192 Mumbai",
+                    "date": "Wed 23 Sep 2026",
+                    "scheduled_departure": "14:00",
+                    "status": "Delayed",
+                    "status_reason": null,
+                    "delay_hours": 6,
+                    "new_departure": "20:00"
+                }
+            ]
+        },
+        "NULI8F": {
+            "pnr": "NULI8F",
+            "name": "Suresh Bose",
+            "loyalty_tier": "Standard",
+            "email": "suresh.bose@example.com",
+            "phone": "+91-984192301",
+            "travel_history": {
+                "flights_last_12_months": 13,
+                "prior_complaints": []
+            },
+            "escalated": false,
+            "compensation_applied": [],
+            "bookings": [
+                {
+                    "flight_id": "SK-505",
+                    "route": "Delhi \u2192 Mumbai",
+                    "date": "Wed 23 Sep 2026",
+                    "scheduled_departure": "16:00",
+                    "status": "Cancelled",
+                    "status_reason": "operational reasons",
+                    "delay_hours": null,
+                    "new_departure": null
+                }
+            ]
+        },
+        "3IPOE7": {
+            "pnr": "3IPOE7",
+            "name": "Anjali Patel",
+            "loyalty_tier": "Standard",
+            "email": "anjali.patel@example.com",
+            "phone": "+91-983608900",
+            "travel_history": {
+                "flights_last_12_months": 7,
+                "prior_complaints": []
+            },
+            "escalated": false,
+            "compensation_applied": [],
+            "bookings": [
+                {
+                    "flight_id": "SK-101",
+                    "route": "Bengaluru \u2192 Hyderabad",
+                    "date": "Wed 23 Sep 2026",
+                    "scheduled_departure": "21:30",
+                    "status": "Delayed",
+                    "status_reason": null,
+                    "delay_hours": 3,
+                    "new_departure": "00:30"
+                }
+            ]
+        },
+        "FWO84B": {
+            "pnr": "FWO84B",
+            "name": "Vikram Patel",
+            "loyalty_tier": "Standard",
+            "email": "vikram.patel@example.com",
+            "phone": "+91-982506546",
+            "travel_history": {
+                "flights_last_12_months": 11,
+                "prior_complaints": []
+            },
+            "escalated": false,
+            "compensation_applied": [],
+            "bookings": [
+                {
+                    "flight_id": "SK-303",
+                    "route": "Kolkata \u2192 Delhi",
+                    "date": "Wed 23 Sep 2026",
+                    "scheduled_departure": "04:45",
+                    "status": "Unaffected",
+                    "status_reason": null,
+                    "delay_hours": null,
+                    "new_departure": null
+                }
+            ]
+        }
+    }
+}
